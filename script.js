@@ -1,18 +1,28 @@
-var numbers = ["0","1","2","3","4","5","6","7","8","9"]
+var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
-var specialCharacters =["!","@","#","$","%","^","&","*","(",")","_","+"]
+var specialCharacters =["!","@","#","$","%","^","&","*","(",")","_","+"];
 
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-var upperCase = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
+const array = numbers.concat(specialCharacters, lowerCase, upperCase)
 
-function generatePassword({
-  // prompt user for password length
+console.log(array);
+
+// var numbers = "0123456789".split("") // split method
+// var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("")
+
+// var characters = "0123457689abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+[];'./{}:>?|"
+// prompt user for password length
   //Validate password length-- make sure its between 8-128 characters
   //prompt user for special characters
+
+function generatePassword() {
+
   
-  })
+  
+  }
 
 
 // Assignment Code
