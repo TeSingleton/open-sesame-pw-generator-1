@@ -11,5 +11,8 @@ Below in my acknowledgements is the starter code that I sourced to give me an id
 
 ## Acknowledgements
 
+Much Thanks to..
+
  - [Stack Overflow: Aaron Plocharczyk](https://stackoverflow.com/questions/45828805/generate-string-characters-in-javascript)
  
+ - [Youtube https://youtu.be/v2jfGo7ztm8]

@@ -1,5 +1,5 @@
-var characterLength = [];
-var pwArray = [];
+var characterLength = []; //open array to be called--characters
+var pwArray = []; // open array to be called --compiled characters for password
 
 var specialCharArr = [
   "!",
@@ -74,11 +74,12 @@ var upperCaseArr = [
 var numberArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
 
+var generateBtn = document.querySelector("#generate");
+// copy btn added to project as a way to test my understanding
 var copyBtn =document.querySelector ("#copy")
 
-function thePrompts() {
+function thePrompts() { //this function allows application to select characters via page prompts--- code snippet sourced via 
   pwArray = [];
 
   characterLength = parseInt(
