@@ -1,103 +1,150 @@
-var numbers = ["0","1","2","3","4","5","6","7","8","9"];
+var characterLength = [];
+var pwArray = [];
 
-var specialCharacters =["!","@","#","$","%","^","&","*","(",")","_","+"];
-
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-
-var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
-var passwordLength
-
-var generatePassword
-
-var passwordText
-
-// var allChar = array // these may need to move
-
-const array = numbers.concat(specialCharacters, lowerCase, upperCase)
-
-console.log(array);
-
-// Validate password length-- make sure its between 8-128 characters
-  // prompt user for special characters
-  // If password length is greater than or equal to 8 and password length is greater than or equal to 128
-
-
-// prompt user for password length  //prompt code sourced from javapoint.com
-var passwordLength = true
-function passwordLength () {
-var a = prompt("Enter Password Length")
-  
-}
-
-function generatePassword() {
- var hello = "Enter Password Length";
-  var input = prompt (hello, "8-128 characters");
-  if (i => 8) {
-    prompt ("Password must be atleast 8 Characters")
-  } else if (i ==< 8){
-    prompt ("Apply Special Characters")
-  }
-//  let input = { 
-//   newPassword
-
-  
-
-  }
-
-//  confirm(input);
-
-// if(!variableA && variableB ) {
-//   //end the function early
-//   //alert the user they had bad data
-//   return"";
-// }
-  
-
-  
-  
-  
-//declare a new empty string to store the password characters
-
-for (i = 0; i < passwordLength; i++)
-
-//randomly select chars
-//adding that chat to building password string
-
-//return completed string;
-
+var specialCharArr = [
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "_",
+  "+",
+];
+var lowerCaseArr = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var upperCaseArr = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var numberArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-var generateBtn = document.querySelector("#generate"); 
+var copyBtn =document.querySelector ("#copy")
 
+function thePrompts() {
+  pwArray = [];
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  characterLength = parseInt(
+    prompt("How many characters do you want fam? 8-128")
+  ); //NaN= not a number //parseInt- allows the string to be converted into an interger.
 
-  passwordText.value = password;
+  if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
+    // if character length is not a number or character length is greater than 128   //confirmation that the stored value is not a number
+    alert("Come on man, no letters. Pick ......betweeeeen.....8 and 128."); //figure out how to make the prompt retun upon invalid inputs
+    return false;
+  }
 
+  if (confirm("You need some lowercase letters in that password fam?")) {
+    pwArray = pwArray.concat(lowerCaseArr);
+  }
+  if (confirm("What about some Uppercase letters ?")) {
+    pwArray = pwArray.concat(upperCaseArr);
+  }
+  if (confirm(".....You need some of them (whispers)....Special Characters?"));
+  {
+    pwArray = pwArray.concat(specialCharArr);
+  }
+  if (confirm("Any numbers?")) {
+    pwArray = pwArray.concat(numberArr);
+  }
+  return true;
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 
 
+// Write password to the #password input
+function writePassword() {
+  var theRightPrompts = thePrompts(); //returns true or false
+  var passwordText = document.querySelector("#password");
 
-// complete JS code only
-// what sort of data does my app need to work?
-// What sorts of actions does my code need to complete?
-// how to pull data into JS?
-//storing all needed characters in variables.
-//array collections.
-// numbers   
-//special characters
-// lower case letters
-// upper case latters
+  if (theRightPrompts) {
+    var finalPassword = generatePassword();
 
+    passwordText.value = finalPassword;
+  } else {
+    passwordText.value = "";
+  }
+  // debugger
+  function generatePassword() {
+    var password = "";
+    for (var i = 0; i < characterLength; i++) {
+      var randomChar = Math.floor(Math.random() * pwArray.length);
+      password = password + pwArray[randomChar];
+    }
+    // console.log("woord")
 
+    return password;
+  }
 
+  copyBtn.addEventListener("click", copyPassword);
 
+  function copyPassword() {
+    var copyText = document.getElementById("password");
+
+    copyText.select();
+    copyText.setSelectionRange(0,99999)
+
+    navigator.clipboard.writeText(copyText.value);
+
+    alert("Copied the text: " + copyText.value)
+  }
+}
