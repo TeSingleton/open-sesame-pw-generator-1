@@ -11,8 +11,25 @@ Below in my acknowledgements is the starter code that I sourced to give me an id
 
 ## Acknowledgements
 
-Much Thanks to..
-
- - [Stack Overflow: Aaron Plocharczyk](https://stackoverflow.com/questions/45828805/generate-string-characters-in-javascript)
+ - [Stack Overflow: Aaron Plocharczyk](https://stackoverflow.com/questions/45828805/generate-string-characters-in-javascript)- For Loop help
  
- - [Youtube https://youtu.be/v2jfGo7ztm8]
+- [Youtube:Daniel Vega](https://youtu.be/v2jfGo7ztm8) -Understanding the syntax
+
+- [w3schools](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp) -Copy Button
+
+
+## Authors
+
+- [Svante McDaniel @BigTe_(https://github.com/TeSingleton)
+
+
+## Screenshots
+
+![App Screenshot](./Assets/Screen%20Shot%202022-06-19%20at%2012.52.48%20AM.png)
+
+
+## Deployment Page
+
+https://tesingleton.github.io/open-sesame-pw-generator-1/
+
+

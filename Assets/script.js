@@ -88,7 +88,7 @@ function thePrompts() { //this function allows application to select characters 
 
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     // if character length is not a number or character length is greater than 128   //confirmation that the stored value is not a number
-    alert("Come on man, no letters. Pick ......betweeeeen.....8 and 128."); //figure out how to make the prompt retun upon invalid inputs
+    alert("Come on mannnn, Pick ......betweeeeen.....8 and 128!!"); //figure out how to make the prompt retun upon invalid inputs
     return false;
   }
 
@@ -146,6 +146,6 @@ function writePassword() {
 
     navigator.clipboard.writeText(copyText.value);
 
-    alert("Copied the text: " + copyText.value)
+    alert("Password Copied To Clipboard ✅: " )
   }
 }
